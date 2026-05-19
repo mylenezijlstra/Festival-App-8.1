@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap');
+
+/* ============================================================
+   Festival App – CSS Design System (Pixel Perfect)
+   ============================================================ */
+
+:root {
+  --color-red: #E82C2A;
+  --color-petrol: #25799D;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-bg: #FFFFFF;
+  --color-text: #111111;
+  --color-grid-line: #777777;
+  
+  --font-family: 'Montserrat', 'Helvetica Neue', Helvetica, sans-serif;
+  --nav-height: 70px;
+  --header-height: 60px;
+}
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+  padding-top: var(--header-height);
+  padding-bottom: var(--nav-height);
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  padding: 15px 20px;
+}
+
+/* ---------- Header ---------- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--color-black);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  z-index: 1000;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+}
+
+.header__logo-icon {
+  position: relative;
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1;
+  display: inline-block;
+}
+
+.header__logo-icon .heart {
+  color: var(--color-red);
+  position: absolute;
+  top: -4px;
+  left: 2px;
+  font-size: 1.5rem;
+}
+
+.header__controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.theme-toggle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(to right, var(--color-red) 50%, var(--color-black) 50%);
+  border: 2px solid var(--color-red);
+  display: inline-block;
+}
+
+.lang-flag {
+  display: flex;
+  flex-direction: column;
+  width: 24px;
+  height: 16px;
+}
+.lang-flag span {
+  flex: 1;
+  width: 100%;
+}
+.lang-flag span:nth-child(1) { background-color: #AE1C28; }
+.lang-flag span:nth-child(2) { background-color: #FFFFFF; }
+.lang-flag span:nth-child(3) { background-color: #21468B; }
+
+/* ---------- Header (Back style for Artiest) ---------- */
+.header--back .header__logo {
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.header__back-btn {
+  background: none;
+  border: none;
+  color: var(--color-red);
+  font-size: 2rem;
+  cursor: pointer;
+  padding-right: 15px;
+  display: flex;
+  align-items: center;
+}
+.header__back-btn svg {
+  fill: var(--color-red);
+  width: 20px;
+  height: 20px;
+}
+
+
+/* ---------- Footer Navigation ---------- */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  background-color: var(--color-red);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1000;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.nav-icon {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: var(--color-white);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.nav-item.active .nav-icon {
+  stroke: var(--color-black);
+  fill: var(--color-black); /* For filled icons like music note */
+}
+/* Special handling for active info and map */
+.nav-item.active .nav-icon-info {
+  stroke: var(--color-black);
+}
+.nav-item.active .nav-icon-music {
+  stroke: var(--color-black);
+  fill: var(--color-black);
+}
+
+
+/* ---------- Info Pagina (Accordeons) ---------- */
+.accordion {
+  margin-bottom: 15px;
+}
+
+.accordion__header {
+  background-color: var(--color-petrol);
+  color: var(--color-white);
+  padding: 15px 20px;
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.accordion__header .arrow {
+  font-size: 1rem;
+  font-style: normal;
+}
+
+.accordion__body {
+  display: none;
+  padding: 15px 5px;
+}
+
+.accordion.active .accordion__body {
+  display: block;
+}
+
+.accordion__body h3 {
+  color: var(--color-petrol);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  margin-top: 20px;
+}
+.accordion__body h3:first-child {
+  margin-top: 0;
+}
+
+.accordion__body p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: var(--color-text);
+  margin-bottom: 15px;
+}
+
+
+/* ---------- Programma Pagina ---------- */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-white);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.tab.black { background-color: var(--color-black); }
+.tab.petrol { background-color: var(--color-petrol); }
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: 35px 1fr 1fr;
+  gap: 0;
+  margin-top: 10px;
+}
+
+.time-header {
+  color: var(--color-petrol);
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding-bottom: 10px;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.stage-row {
+  display: contents;
+}
+
+.stage-name {
+  color: var(--color-petrol);
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  padding: 25px 0;
+}
+
+.schedule-cell {
+  border-left: 1px solid var(--color-grid-line);
+  border-bottom: 1px solid var(--color-grid-line);
+  padding: 5px;
+  position: relative;
+  min-height: 90px;
+}
+/* Top border for the first row of cells */
+.stage-row:nth-child(4) .schedule-cell,
+.stage-row:nth-child(4) .stage-name {
+  border-top: 1px solid var(--color-grid-line);
+}
+.stage-name {
+  border-bottom: 1px solid var(--color-grid-line);
+  border-left: 1px solid var(--color-grid-line);
+}
+
+.schedule-block {
+  background-color: var(--color-petrol);
+  color: var(--color-white);
+  border-radius: 12px;
+  padding: 15px;
+  font-style: italic;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  z-index: 10;
+}
+
+.schedule-block.span-2 {
+  right: -100%;
+  width: calc(200% - 10px);
+}
+
+.schedule-block svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: var(--color-white);
+  stroke-width: 2;
+}
+
+/* ---------- Artiest Detail Pagina ---------- */
+.hero-image {
+  width: 100%;
+  height: 300px;
+  background-color: #E0E0E0;
+  background-image: url('https://images.unsplash.com/photo-1593697821252-0c9137d9fc45?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); /* Placeholder die lijkt op Spinvis */
+  background-size: cover;
+  background-position: center;
+  display: block;
+}
+
+.artist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.artist-title {
+  color: var(--color-petrol);
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+.artist-header svg {
+  width: 35px;
+  height: 35px;
+  fill: none;
+  stroke: var(--color-red);
+  stroke-width: 2;
+}
+
+.artist-details {
+  padding: 0 20px 20px 20px;
+}
+
+.artist-intro {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.artist-bio {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+/* Home / Map shells */
+.box-outline {
+  border: 1px solid #CCC;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #666;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Utilities */
+[data-lang="nl"] .lang-en { display: none !important; }
+[data-lang="en"] .lang-nl { display: none !important; }

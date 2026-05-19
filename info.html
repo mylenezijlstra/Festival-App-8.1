@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="nl" data-lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>U Festival - Info</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header__logo">
+      <span class="header__logo-icon">U<span class="heart">♥</span></span>
+      FESTIVAL
+    </div>
+    <div class="header__controls">
+      <div class="theme-toggle" id="btn-theme"></div>
+      <div class="lang-flag" id="btn-lang">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content (volgens screenshot 3: Info met accordeons) -->
+  <main class="container">
+    
+    <div class="accordion">
+      <div class="accordion__header">
+        <span>Algemeen & contact</span>
+        <span class="arrow">▼</span>
+      </div>
+      <div class="accordion__body" style="display: none;">
+        <!-- In the design, this is collapsed -->
+      </div>
+    </div>
+
+    <div class="accordion active">
+      <div class="accordion__header">
+        <span>Bereikbaarheid</span>
+        <span class="arrow">▶</span>
+      </div>
+      <div class="accordion__body" style="display: block;">
+        <h3>Fiets</h3>
+        <p>Er is een grote gratis fietsen-stalling aanwezig waar je jouw fiets de gehele dag kunt stallen.</p>
+        
+        <h3>Auto</h3>
+        <p>Je kunt een parkingticket aan-schaffen. Parkeren kan op P+R Papendorp, volg hiervoor de borden 'P online ticket'. Heb je geen ticket van te voren gekocht? Dan kun je bij de parkeerwachter op locatie een parkeerticket aan-schaffen (PIN ONLY). Let wel op: VOL=VOL.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Bottom Navigation -->
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-item">
+      <!-- Home SVG -->
+      <svg class="nav-icon" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    </a>
+    <a href="info.html" class="nav-item active">
+      <!-- Info SVG -->
+      <svg class="nav-icon nav-icon-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+    </a>
+    <a href="programma.html" class="nav-item">
+      <!-- Music SVG -->
+      <svg class="nav-icon nav-icon-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+    </a>
+    <a href="kaart.html" class="nav-item">
+      <!-- Map Pin SVG -->
+      <svg class="nav-icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    </a>
+  </nav>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

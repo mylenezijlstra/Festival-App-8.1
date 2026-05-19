@@ -1,0 +1,25 @@
+{
+  "name": "Festival App",
+  "short_name": "Festival",
+  "description": "Bekijk de programmering, artiesten en plattegrond van het festival.",
+  "start_url": "/Festival-App-8.1/index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F8F7FF",
+  "theme_color": "#6C3CE1",
+  "lang": "nl",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
